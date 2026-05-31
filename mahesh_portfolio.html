@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kota Mahesh Rao — Data Science Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0f0f0f;
+  --paper: #faf9f6;
+  --rule: #e8e5de;
+  --accent: #1a472a;
+  --accent-light: #e8f0ea;
+  --muted: #7a7670;
+  --gold: #c9a84c;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--paper); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; }
+
+/* NAV */
+nav { position: fixed; top: 0; width: 100%; background: rgba(250,249,246,0.95); border-bottom: 1px solid var(--rule); z-index: 100; backdrop-filter: blur(8px); }
+.nav-inner { max-width: 900px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 400; transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent); }
+
+/* HERO */
+.hero { max-width: 900px; margin: 0 auto; padding: 8rem 2rem 5rem; display: grid; grid-template-columns: 1fr auto; gap: 4rem; align-items: start; }
+.hero-tag { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px; }
+.hero-tag::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+.hero-name { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3.8rem); line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1.5rem; }
+.hero-name span { color: var(--accent); }
+.hero-bio { font-size: 16px; color: var(--muted); max-width: 480px; margin-bottom: 2rem; line-height: 1.8; }
+.hero-stats { display: flex; gap: 2rem; padding-top: 2rem; border-top: 1px solid var(--rule); }
+.stat { }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--ink); line-height: 1; }
+.stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+.hero-right { padding-top: 6rem; }
+.status-card { border: 1px solid var(--rule); border-radius: 4px; padding: 1.25rem; min-width: 200px; }
+.status-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; display: inline-block; margin-right: 6px; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.status-text { font-size: 12px; color: var(--muted); }
+.status-label { font-size: 13px; font-weight: 500; color: var(--ink); margin-top: 8px; }
+.hero-links { margin-top: 1rem; display: flex; flex-direction: column; gap: 6px; }
+.hero-link { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+.hero-link:hover { color: var(--accent); }
+.hero-link::before { content: '↗'; font-size: 10px; }
+
+/* DIVIDER */
+.section-divider { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+.divider-line { border: none; border-top: 1px solid var(--rule); }
+.section-header { display: flex; align-items: baseline; gap: 1rem; padding: 3rem 0 2rem; }
+.section-num { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 0.08em; }
+.section-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; letter-spacing: -0.02em; }
+
+/* ABOUT */
+.about-section { max-width: 900px; margin: 0 auto; padding: 0 2rem 4rem; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.about-text { font-size: 15px; color: #333; line-height: 1.9; }
+.about-facts { display: flex; flex-direction: column; gap: 1rem; }
+.fact-row { display: flex; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--rule); }
+.fact-label { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; width: 100px; flex-shrink: 0; padding-top: 2px; }
+.fact-value { font-size: 13px; color: var(--ink); }
+
+/* PROJECTS */
+.projects-section { max-width: 900px; margin: 0 auto; padding: 0 2rem 4rem; }
+.project-card { border: 1px solid var(--rule); border-radius: 4px; padding: 2rem; margin-bottom: 1.5rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; transition: border-color 0.2s, box-shadow 0.2s; }
+.project-card:hover { border-color: var(--accent); box-shadow: 0 4px 20px rgba(26,71,42,0.08); }
+.project-num { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+.project-name { font-family: 'Playfair Display', serif; font-size: 1.3rem; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+.project-desc { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 1rem; max-width: 480px; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font-family: 'DM Mono', monospace; font-size: 11px; padding: 4px 10px; border: 1px solid var(--rule); border-radius: 2px; color: var(--muted); }
+.project-metric { text-align: right; }
+.metric-val { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--accent); line-height: 1; }
+.metric-label { font-size: 11px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+.project-link { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; margin-top: 1rem; border-bottom: 1px solid var(--accent-light); padding-bottom: 2px; transition: border-color 0.2s; }
+.project-link:hover { border-color: var(--accent); }
+
+/* SKILLS */
+.skills-section { max-width: 900px; margin: 0 auto; padding: 0 2rem 4rem; }
+.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.skill-group-title { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
+.skill-list { display: flex; flex-direction: column; gap: 0.75rem; }
+.skill-item { display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.75rem; border-bottom: 1px solid var(--rule); }
+.skill-name { font-size: 13px; color: var(--ink); }
+.skill-bar-wrap { width: 80px; height: 2px; background: var(--rule); border-radius: 2px; }
+.skill-bar { height: 100%; background: var(--accent); border-radius: 2px; }
+
+/* EXPERIENCE */
+.exp-section { max-width: 900px; margin: 0 auto; padding: 0 2rem 4rem; }
+.exp-card { display: grid; grid-template-columns: 160px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--rule); }
+.exp-date { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); padding-top: 4px; }
+.exp-role { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 4px; }
+.exp-company { font-size: 13px; color: var(--accent); margin-bottom: 0.75rem; font-weight: 500; }
+.exp-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+/* EDUCATION */
+.edu-section { max-width: 900px; margin: 0 auto; padding: 0 2rem 4rem; }
+.edu-card { display: grid; grid-template-columns: 160px 1fr; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid var(--rule); }
+.edu-year { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); padding-top: 4px; }
+.edu-degree { font-weight: 500; font-size: 14px; margin-bottom: 2px; }
+.edu-school { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+.edu-grade { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--accent); }
+
+/* CERTS */
+.certs-section { max-width: 900px; margin: 0 auto; padding: 0 2rem 4rem; }
+.cert-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.cert-card { border: 1px solid var(--rule); border-radius: 4px; padding: 1.25rem; display: flex; gap: 1rem; align-items: flex-start; }
+.cert-icon { width: 36px; height: 36px; background: var(--accent-light); border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.cert-name { font-size: 13px; font-weight: 500; color: var(--ink); line-height: 1.4; }
+.cert-issuer { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+/* CONTACT */
+.contact-section { max-width: 900px; margin: 0 auto; padding: 0 2rem 6rem; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.contact-heading { font-family: 'Playfair Display', serif; font-size: 2rem; letter-spacing: -0.02em; margin-bottom: 1rem; }
+.contact-sub { font-size: 15px; color: var(--muted); line-height: 1.8; }
+.contact-links { display: flex; flex-direction: column; gap: 1rem; padding-top: 1rem; }
+.contact-link { display: flex; gap: 1rem; align-items: center; padding: 1rem; border: 1px solid var(--rule); border-radius: 4px; text-decoration: none; color: var(--ink); transition: border-color 0.2s; }
+.contact-link:hover { border-color: var(--accent); }
+.contact-link-icon { font-size: 18px; }
+.contact-link-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; font-family: 'DM Mono', monospace; }
+.contact-link-val { font-size: 13px; font-weight: 500; }
+
+/* FOOTER */
+footer { border-top: 1px solid var(--rule); padding: 2rem; text-align: center; }
+.footer-text { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.06em; }
+
+/* ANIMATIONS */
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 680px) {
+  .hero { grid-template-columns: 1fr; gap: 2rem; padding: 6rem 1.5rem 3rem; }
+  .hero-right { padding-top: 0; }
+  .about-grid, .skills-grid, .cert-grid, .contact-grid { grid-template-columns: 1fr; }
+  .exp-card, .edu-card { grid-template-columns: 1fr; gap: 0.5rem; }
+  .project-card { grid-template-columns: 1fr; }
+  .project-metric { text-align: left; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Mahesh Rao</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-tag">Data Science Portfolio</div>
+    <h1 class="hero-name">Kota<br><span>Mahesh Rao</span></h1>
+    <p class="hero-bio">B.Tech Data Science student at Amrita Sai Institute, Class of 2027. I build real ML projects independently — not waiting for college to assign them.</p>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">5</div>
+        <div class="stat-label">Projects</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">4</div>
+        <div class="stat-label">Certifications</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">8.29</div>
+        <div class="stat-label">CGPA</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="status-card">
+      <div><span class="status-dot"></span><span class="status-text">Available for internships</span></div>
+      <div class="status-label">Hyderabad, Telangana</div>
+      <div class="hero-links">
+        <a href="mailto:maheshrao5885@gmail.com" class="hero-link">maheshrao5885@gmail.com</a>
+        <a href="https://linkedin.com/in/kota-mahesh-rao-2bb120298" class="hero-link" target="_blank">LinkedIn Profile</a>
+        <a href="https://github.com/mahesh-kota" class="hero-link" target="_blank">GitHub Portfolio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><hr class="divider-line"></div>
+
+<!-- ABOUT -->
+<section class="about-section fade-in" id="about">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">About Me</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm a second-year B.Tech Data Science (CSE) student at Amrita Sai Institute of Science & Technology, graduating in 2027 with an 8.29 CGPA.</p>
+      <br>
+      <p>My college hadn't assigned me a single project — so I built five myself. From a House Price Predictor to a COVID-19 Global Dashboard, every project was self-initiated, self-taught, and shipped to GitHub.</p>
+      <br>
+      <p>I hold the Google Data Analytics Professional Certificate (9 courses, 100% Capstone score) and am currently completing a Data Science & Analytics Internship at Future Interns.</p>
+    </div>
+    <div class="about-facts">
+      <div class="fact-row">
+        <span class="fact-label">Degree</span>
+        <span class="fact-value">B.Tech Data Science (CSE)</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">College</span>
+        <span class="fact-value">Amrita Sai Institute of Science & Technology</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Batch</span>
+        <span class="fact-value">2023 – 2027</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">CGPA</span>
+        <span class="fact-value">8.29 (3rd Year)</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Location</span>
+        <span class="fact-value">Hyderabad, Telangana, India</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Languages</span>
+        <span class="fact-value">English, Telugu</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><hr class="divider-line"></div>
+
+<!-- PROJECTS -->
+<section class="projects-section fade-in" id="projects">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Projects</h2>
+  </div>
+
+  <div class="project-card">
+    <div>
+      <div class="project-num">Project 01</div>
+      <div class="project-name">House Price Predictor</div>
+      <p class="project-desc">Built a Linear Regression ML model on the Kaggle House Prices dataset with 1,460 houses and 79 features. Performed EDA, data cleaning, feature engineering, and model evaluation.</p>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">Seaborn</span><span class="tag">Jupyter</span>
+      </div>
+      <a href="https://github.com/mahesh-kota/house-price-predictor" target="_blank" class="project-link">View on GitHub ↗</a>
+    </div>
+    <div class="project-metric">
+      <div class="metric-val">$28K</div>
+      <div class="metric-label">MAE Score</div>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div>
+      <div class="project-num">Project 02</div>
+      <div class="project-name">COVID-19 Global Data Analysis</div>
+      <p class="project-desc">Analyzed 200K+ rows of real COVID-19 data across 200+ countries. Built 4 visualizations including India wave timeline, country comparison, and an interactive Tableau choropleth world map.</p>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Plotly</span><span class="tag">Tableau</span><span class="tag">Matplotlib</span>
+      </div>
+      <a href="https://github.com/mahesh-kota/covid-data-analysis" target="_blank" class="project-link">View on GitHub ↗</a>
+    </div>
+    <div class="project-metric">
+      <div class="metric-val">200+</div>
+      <div class="metric-label">Countries Analyzed</div>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div>
+      <div class="project-num">Project 03</div>
+      <div class="project-name">Sales Data Analysis</div>
+      <p class="project-desc">Analyzed sales trends, revenue insights, and regional performance breakdowns. Identified top-performing categories and seasonal patterns in the data.</p>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span>
+      </div>
+      <a href="https://github.com/mahesh-kota/FUTURE_DS_01" target="_blank" class="project-link">View on GitHub ↗</a>
+    </div>
+    <div class="project-metric">
+      <div class="metric-val">EDA</div>
+      <div class="metric-label">Analysis Type</div>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div>
+      <div class="project-num">Project 04</div>
+      <div class="project-name">Superstore Sales Dashboard</div>
+      <p class="project-desc">Built a comprehensive retail analytics dashboard on the Sample Superstore dataset. Visualized profit margins, regional performance, and category-level trends.</p>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Tableau</span>
+      </div>
+      <a href="https://github.com/mahesh-kota/FUTURE_DS_02" target="_blank" class="project-link">View on GitHub ↗</a>
+    </div>
+    <div class="project-metric">
+      <div class="metric-val">BI</div>
+      <div class="metric-label">Dashboard Type</div>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div>
+      <div class="project-num">Project 05</div>
+      <div class="project-name">Bank Marketing Analysis</div>
+      <p class="project-desc">Analyzed bank marketing campaign data to predict whether customers will subscribe to a term deposit. Applied classification techniques on the UCI bank-full dataset.</p>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">Classification</span>
+      </div>
+      <a href="https://github.com/mahesh-kota/FUTURE_DS_03" target="_blank" class="project-link">View on GitHub ↗</a>
+    </div>
+    <div class="project-metric">
+      <div class="metric-val">ML</div>
+      <div class="metric-label">Classification</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><hr class="divider-line"></div>
+
+<!-- SKILLS -->
+<section class="skills-section fade-in" id="skills">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Skills</h2>
+  </div>
+  <div class="skills-grid">
+    <div>
+      <div class="skill-group-title">Languages & Libraries</div>
+      <div class="skill-list">
+        <div class="skill-item"><span class="skill-name">Python</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Pandas</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">NumPy</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Scikit-learn</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:75%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">SQL</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:70%"></div></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="skill-group-title">Visualization</div>
+      <div class="skill-list">
+        <div class="skill-item"><span class="skill-name">Tableau</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Matplotlib</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Seaborn</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Plotly</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:75%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Power BI</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:60%"></div></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="skill-group-title">Concepts</div>
+      <div class="skill-list">
+        <div class="skill-item"><span class="skill-name">Machine Learning</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:75%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Data Cleaning</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">EDA</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Statistics</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:70%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Git / GitHub</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:72%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><hr class="divider-line"></div>
+
+<!-- EXPERIENCE -->
+<section class="exp-section fade-in" id="experience">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Experience</h2>
+  </div>
+  <div class="exp-card">
+    <div class="exp-date">May 2026 — Jun 2026</div>
+    <div>
+      <div class="exp-role">Data Science & Analytics Intern</div>
+      <div class="exp-company">Future Interns — Fellowship Program</div>
+      <p class="exp-desc">Applied Data Science concepts in a real-world environment under a structured fellowship. Worked on practical analytics tasks using Python, Pandas, and data visualization tools. Successfully completed 3 projects and received a Completion Certificate and Letter of Recommendation.</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><hr class="divider-line"></div>
+
+<!-- EDUCATION -->
+<section class="edu-section fade-in" id="education">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Education</h2>
+  </div>
+  <div class="edu-card">
+    <div class="edu-year">2023 — 2027</div>
+    <div>
+      <div class="edu-degree">Bachelor of Technology — Data Science (CSE)</div>
+      <div class="edu-school">Amrita Sai Institute of Science & Technology</div>
+      <div class="edu-grade">CGPA: 8.29 (3rd Year)</div>
+    </div>
+  </div>
+  <div class="edu-card">
+    <div class="edu-year">2021 — 2023</div>
+    <div>
+      <div class="edu-degree">Intermediate (MPC)</div>
+      <div class="edu-school">SVL Kranthi Junior College</div>
+      <div class="edu-grade">780 Marks — A Grade</div>
+    </div>
+  </div>
+  <div class="edu-card">
+    <div class="edu-year">2019 — 2021</div>
+    <div>
+      <div class="edu-degree">Secondary School Certificate (SSC)</div>
+      <div class="edu-school">Lakshay EM High School</div>
+      <div class="edu-grade">545 Marks — First Class</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><hr class="divider-line"></div>
+
+<!-- CERTIFICATIONS -->
+<section class="certs-section fade-in" id="certifications">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <h2 class="section-title">Certifications</h2>
+  </div>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <div class="cert-icon">🏅</div>
+      <div>
+        <div class="cert-name">Google Data Analytics Professional Certificate</div>
+        <div class="cert-issuer">Google / Coursera — 9 Courses, 100% Capstone</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🐍</div>
+      <div>
+        <div class="cert-name">Python for Data Science, AI & Development</div>
+        <div class="cert-issuer">IBM / Coursera</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🗄️</div>
+      <div>
+        <div class="cert-name">Databases and SQL for Data Science with Python</div>
+        <div class="cert-issuer">IBM / Coursera</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">📊</div>
+      <div>
+        <div class="cert-name">Power BI Workshop</div>
+        <div class="cert-issuer">Kota — Data Visualization</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><hr class="divider-line"></div>
+
+<!-- CONTACT -->
+<section class="contact-section fade-in" id="contact">
+  <div class="section-header">
+    <span class="section-num">07</span>
+    <h2 class="section-title">Get In Touch</h2>
+  </div>
+  <div class="contact-grid">
+    <div>
+      <p class="contact-sub">I'm actively seeking Data Science & ML internship opportunities in Hyderabad, Bangalore, and Vijayawada. Open to project collaborations and learning opportunities.</p>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:maheshrao5885@gmail.com" class="contact-link">
+        <span class="contact-link-icon">✉️</span>
+        <div>
+          <div class="contact-link-label">Email</div>
+          <div class="contact-link-val">maheshrao5885@gmail.com</div>
+        </div>
+      </a>
+      <a href="https://linkedin.com/in/kota-mahesh-rao-2bb120298" target="_blank" class="contact-link">
+        <span class="contact-link-icon">💼</span>
+        <div>
+          <div class="contact-link-label">LinkedIn</div>
+          <div class="contact-link-val">kota-mahesh-rao</div>
+        </div>
+      </a>
+      <a href="https://github.com/mahesh-kota" target="_blank" class="contact-link">
+        <span class="contact-link-icon">🐙</span>
+        <div>
+          <div class="contact-link-label">GitHub</div>
+          <div class="contact-link-val">mahesh-kota</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="footer-text">Kota Mahesh Rao &nbsp;·&nbsp; Data Science Portfolio &nbsp;·&nbsp; Amrita Sai Institute '27 &nbsp;·&nbsp; Hyderabad, India</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
