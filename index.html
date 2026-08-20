@@ -35,7 +35,6 @@ nav { position: fixed; top: 0; width: 100%; background: rgba(250,249,246,0.95); 
 .hero-name span { color: var(--accent); }
 .hero-bio { font-size: 16px; color: var(--muted); max-width: 480px; margin-bottom: 2rem; line-height: 1.8; }
 .hero-stats { display: flex; gap: 2rem; padding-top: 2rem; border-top: 1px solid var(--rule); }
-.stat { }
 .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--ink); line-height: 1; }
 .stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
 .hero-right { padding-top: 6rem; }
@@ -117,7 +116,6 @@ nav { position: fixed; top: 0; width: 100%; background: rgba(250,249,246,0.95); 
 /* CONTACT */
 .contact-section { max-width: 900px; margin: 0 auto; padding: 0 2rem 6rem; }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-.contact-heading { font-family: 'Playfair Display', serif; font-size: 2rem; letter-spacing: -0.02em; margin-bottom: 1rem; }
 .contact-sub { font-size: 15px; color: var(--muted); line-height: 1.8; }
 .contact-links { display: flex; flex-direction: column; gap: 1rem; padding-top: 1rem; }
 .contact-link { display: flex; gap: 1rem; align-items: center; padding: 1rem; border: 1px solid var(--rule); border-radius: 4px; text-decoration: none; color: var(--ink); transition: border-color 0.2s; }
@@ -150,7 +148,7 @@ footer { border-top: 1px solid var(--rule); padding: 2rem; text-align: center; }
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="#" class="nav-logo">Mahesh Rao</a>
+    <a href="#" class="nav-logo">Kota Mahesh Rao</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -166,7 +164,7 @@ footer { border-top: 1px solid var(--rule); padding: 2rem; text-align: center; }
   <div>
     <div class="hero-tag">Data Science Portfolio</div>
     <h1 class="hero-name">Kota<br><span>Mahesh Rao</span></h1>
-    <p class="hero-bio">B.Tech Data Science student at Amrita Sai Institute, Class of 2027. I build real ML projects independently — not waiting for college to assign them.</p>
+    <p class="hero-bio">B.Tech Data Science student specializing in Natural Language Processing (NLP), predictive modeling, and applied machine learning.</p>
     <div class="hero-stats">
       <div class="stat">
         <div class="stat-num">5</div>
@@ -185,10 +183,10 @@ footer { border-top: 1px solid var(--rule); padding: 2rem; text-align: center; }
   <div class="hero-right">
     <div class="status-card">
       <div><span class="status-dot"></span><span class="status-text">Available for internships</span></div>
-      <div class="status-label">Hyderabad, Telangana</div>
+      <div class="status-label">HYD / BLR / Vijayawada</div>
       <div class="hero-links">
         <a href="mailto:maheshrao5885@gmail.com" class="hero-link">maheshrao5885@gmail.com</a>
-        <a href="https://linkedin.com/in/kota-mahesh-rao-2bb120298" class="hero-link" target="_blank">LinkedIn Profile</a>
+        <a href="https://linkedin.com/in/kota-mahesh-rao-ds" class="hero-link" target="_blank">LinkedIn Profile</a>
         <a href="https://github.com/mahesh-kota" class="hero-link" target="_blank">GitHub Portfolio</a>
       </div>
     </div>
@@ -205,11 +203,9 @@ footer { border-top: 1px solid var(--rule); padding: 2rem; text-align: center; }
   </div>
   <div class="about-grid">
     <div class="about-text">
-      <p>I'm a second-year B.Tech Data Science (CSE) student at Amrita Sai Institute of Science & Technology, graduating in 2027 with an 8.29 CGPA.</p>
+      <p>I build data-driven solutions rather than waiting for coursework. Currently pursuing a B.Tech in Data Science (CGPA: 8.29) at Amrita Sai Institute of Science & Technology, graduating in 2027.</p>
       <br>
-      <p>My college hadn't assigned me a single project — so I built five myself. From a House Price Predictor to a COVID-19 Global Dashboard, every project was self-initiated, self-taught, and shipped to GitHub.</p>
-      <br>
-      <p>I hold the Google Data Analytics Professional Certificate (9 courses, 100% Capstone score) and am currently completing a Data Science & Analytics Internship at Future Interns.</p>
+      <p>My focus centers on fine-tuning Transformer architectures (NLP), regression modeling, and creating interactive visualization pipelines. Recently completed a Data Science Internship at Future Interns.</p>
     </div>
     <div class="about-facts">
       <div class="fact-row">
@@ -226,11 +222,11 @@ footer { border-top: 1px solid var(--rule); padding: 2rem; text-align: center; }
       </div>
       <div class="fact-row">
         <span class="fact-label">CGPA</span>
-        <span class="fact-value">8.29 (3rd Year)</span>
+        <span class="fact-value">8.29</span>
       </div>
       <div class="fact-row">
-        <span class="fact-label">Location</span>
-        <span class="fact-value">Hyderabad, Telangana, India</span>
+        <span class="fact-label">Locations</span>
+        <span class="fact-value">Hyderabad, Bangalore, Vijayawada</span>
       </div>
       <div class="fact-row">
         <span class="fact-label">Languages</span>
@@ -246,86 +242,54 @@ footer { border-top: 1px solid var(--rule); padding: 2rem; text-align: center; }
 <section class="projects-section fade-in" id="projects">
   <div class="section-header">
     <span class="section-num">02</span>
-    <h2 class="section-title">Projects</h2>
+    <h2 class="section-title">Featured Projects</h2>
   </div>
 
   <div class="project-card">
     <div>
       <div class="project-num">Project 01</div>
-      <div class="project-name">House Price Predictor</div>
-      <p class="project-desc">Built a Linear Regression ML model on the Kaggle House Prices dataset with 1,460 houses and 79 features. Performed EDA, data cleaning, feature engineering, and model evaluation.</p>
+      <div class="project-name">FinShield — AI Financial Misinformation Detector</div>
+      <p class="project-desc">Fine-tuned the MuRIL NLP model to flag equity market misinformation across 47 NSE stocks. Proved real market impact using Granger Causality testing (p=0.004).</p>
       <div class="project-tags">
-        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">Seaborn</span><span class="tag">Jupyter</span>
+        <span class="tag">Python</span><span class="tag">MuRIL NLP</span><span class="tag">PyTorch</span><span class="tag">Streamlit</span><span class="tag">Scikit-learn</span>
       </div>
-      <a href="https://github.com/mahesh-kota/house-price-predictor" target="_blank" class="project-link">View on GitHub ↗</a>
+      <a href="https://github.com/mahesh-kota" target="_blank" class="project-link">View on GitHub ↗</a>
     </div>
     <div class="project-metric">
-      <div class="metric-val">$28K</div>
-      <div class="metric-label">MAE Score</div>
+      <div class="metric-val">91.4%</div>
+      <div class="metric-label">Accuracy Score</div>
     </div>
   </div>
 
   <div class="project-card">
     <div>
       <div class="project-num">Project 02</div>
-      <div class="project-name">COVID-19 Global Data Analysis</div>
-      <p class="project-desc">Analyzed 200K+ rows of real COVID-19 data across 200+ countries. Built 4 visualizations including India wave timeline, country comparison, and an interactive Tableau choropleth world map.</p>
+      <div class="project-name">House Price Predictor</div>
+      <p class="project-desc">Applied Linear Regression models on Kaggle datasets across 1,460 listings and 79 features. Conducted feature engineering, outlier handling, and cross-validation.</p>
       <div class="project-tags">
-        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Plotly</span><span class="tag">Tableau</span><span class="tag">Matplotlib</span>
+        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">Seaborn</span>
       </div>
-      <a href="https://github.com/mahesh-kota/covid-data-analysis" target="_blank" class="project-link">View on GitHub ↗</a>
+      <a href="https://github.com/mahesh-kota/house-price-predictor" target="_blank" class="project-link">View on GitHub ↗</a>
     </div>
     <div class="project-metric">
-      <div class="metric-val">200+</div>
-      <div class="metric-label">Countries Analyzed</div>
+      <div class="metric-val">$28.1K</div>
+      <div class="metric-label">MAE Score</div>
     </div>
   </div>
 
   <div class="project-card">
     <div>
       <div class="project-num">Project 03</div>
-      <div class="project-name">Sales Data Analysis</div>
-      <p class="project-desc">Analyzed sales trends, revenue insights, and regional performance breakdowns. Identified top-performing categories and seasonal patterns in the data.</p>
+      <div class="project-name">COVID-19 Global Data Analysis</div>
+      <p class="project-desc">Analyzed 200K+ rows of pandemic data across 200+ countries. Built interactive Tableau dashboards and Plotly charts mapping outbreak timelines.</p>
       <div class="project-tags">
-        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span>
+        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Plotly</span><span class="tag">Tableau</span>
       </div>
-      <a href="https://github.com/mahesh-kota/FUTURE_DS_01" target="_blank" class="project-link">View on GitHub ↗</a>
+      <a href="https://github.com/mahesh-kota/covid-data-analysis" target="_blank" class="project-link">View on GitHub ↗</a>
     </div>
     <div class="project-metric">
-      <div class="metric-val">EDA</div>
-      <div class="metric-label">Analysis Type</div>
-    </div>
-  </div>
-
-  <div class="project-card">
-    <div>
-      <div class="project-num">Project 04</div>
-      <div class="project-name">Superstore Sales Dashboard</div>
-      <p class="project-desc">Built a comprehensive retail analytics dashboard on the Sample Superstore dataset. Visualized profit margins, regional performance, and category-level trends.</p>
-      <div class="project-tags">
-        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Tableau</span>
-      </div>
-      <a href="https://github.com/mahesh-kota/FUTURE_DS_02" target="_blank" class="project-link">View on GitHub ↗</a>
-    </div>
-    <div class="project-metric">
-      <div class="metric-val">BI</div>
-      <div class="metric-label">Dashboard Type</div>
-    </div>
-  </div>
-
-  <div class="project-card">
-    <div>
-      <div class="project-num">Project 05</div>
-      <div class="project-name">Bank Marketing Analysis</div>
-      <p class="project-desc">Analyzed bank marketing campaign data to predict whether customers will subscribe to a term deposit. Applied classification techniques on the UCI bank-full dataset.</p>
-      <div class="project-tags">
-        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">Classification</span>
-      </div>
-      <a href="https://github.com/mahesh-kota/FUTURE_DS_03" target="_blank" class="project-link">View on GitHub ↗</a>
-    </div>
-    <div class="project-metric">
-      <div class="metric-val">ML</div>
-      <div class="metric-label">Classification</div>
+      <div class="metric-val">200+</div>
+      <div class="metric-label">Countries Visualized</div>
     </div>
   </div>
 </section>
@@ -336,37 +300,35 @@ footer { border-top: 1px solid var(--rule); padding: 2rem; text-align: center; }
 <section class="skills-section fade-in" id="skills">
   <div class="section-header">
     <span class="section-num">03</span>
-    <h2 class="section-title">Skills</h2>
+    <h2 class="section-title">Skills & Technologies</h2>
   </div>
   <div class="skills-grid">
     <div>
       <div class="skill-group-title">Languages & Libraries</div>
       <div class="skill-list">
         <div class="skill-item"><span class="skill-name">Python</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Pandas</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">NumPy</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Scikit-learn</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:75%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">SQL</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:70%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Pandas & NumPy</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Scikit-learn</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">SQL</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:75%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Streamlit</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:75%"></div></div></div>
       </div>
     </div>
     <div>
-      <div class="skill-group-title">Visualization</div>
+      <div class="skill-group-title">Visualization & BI</div>
       <div class="skill-list">
-        <div class="skill-item"><span class="skill-name">Tableau</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Matplotlib</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Seaborn</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Plotly</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:75%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Power BI</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:60%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Tableau</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Plotly</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Power BI</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:70%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Matplotlib / Seaborn</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div></div>
       </div>
     </div>
     <div>
-      <div class="skill-group-title">Concepts</div>
+      <div class="skill-group-title">Specializations</div>
       <div class="skill-list">
-        <div class="skill-item"><span class="skill-name">Machine Learning</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:75%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Data Cleaning</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">EDA</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Statistics</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:70%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Git / GitHub</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:72%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Natural Language Processing</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Machine Learning</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:78%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Exploratory Data Analysis</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Git & GitHub</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:75%"></div></div></div>
       </div>
     </div>
   </div>
@@ -383,9 +345,9 @@ footer { border-top: 1px solid var(--rule); padding: 2rem; text-align: center; }
   <div class="exp-card">
     <div class="exp-date">May 2026 — Jun 2026</div>
     <div>
-      <div class="exp-role">Data Science & Analytics Intern</div>
-      <div class="exp-company">Future Interns — Fellowship Program</div>
-      <p class="exp-desc">Applied Data Science concepts in a real-world environment under a structured fellowship. Worked on practical analytics tasks using Python, Pandas, and data visualization tools. Successfully completed 3 projects and received a Completion Certificate and Letter of Recommendation.</p>
+      <div class="exp-role">Data Science Intern</div>
+      <div class="exp-company">Future Interns</div>
+      <p class="exp-desc">Processed complex datasets using Python (Pandas, NumPy) to extract actionable insights. Developed interactive data visualizations with Plotly, built automated data workflows, and earned an official Letter of Recommendation (LOR) for technical execution.</p>
     </div>
   </div>
 </section>
@@ -403,23 +365,7 @@ footer { border-top: 1px solid var(--rule); padding: 2rem; text-align: center; }
     <div>
       <div class="edu-degree">Bachelor of Technology — Data Science (CSE)</div>
       <div class="edu-school">Amrita Sai Institute of Science & Technology</div>
-      <div class="edu-grade">CGPA: 8.29 (3rd Year)</div>
-    </div>
-  </div>
-  <div class="edu-card">
-    <div class="edu-year">2021 — 2023</div>
-    <div>
-      <div class="edu-degree">Intermediate (MPC)</div>
-      <div class="edu-school">SVL Kranthi Junior College</div>
-      <div class="edu-grade">780 Marks — A Grade</div>
-    </div>
-  </div>
-  <div class="edu-card">
-    <div class="edu-year">2019 — 2021</div>
-    <div>
-      <div class="edu-degree">Secondary School Certificate (SSC)</div>
-      <div class="edu-school">Lakshay EM High School</div>
-      <div class="edu-grade">545 Marks — First Class</div>
+      <div class="edu-grade">CGPA: 8.29</div>
     </div>
   </div>
 </section>
@@ -437,14 +383,7 @@ footer { border-top: 1px solid var(--rule); padding: 2rem; text-align: center; }
       <div class="cert-icon">🏅</div>
       <div>
         <div class="cert-name">Google Data Analytics Professional Certificate</div>
-        <div class="cert-issuer">Google / Coursera — 9 Courses, 100% Capstone</div>
-      </div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon">🐍</div>
-      <div>
-        <div class="cert-name">Python for Data Science, AI & Development</div>
-        <div class="cert-issuer">IBM / Coursera</div>
+        <div class="cert-issuer">Google / Coursera</div>
       </div>
     </div>
     <div class="cert-card">
@@ -457,8 +396,15 @@ footer { border-top: 1px solid var(--rule); padding: 2rem; text-align: center; }
     <div class="cert-card">
       <div class="cert-icon">📊</div>
       <div>
-        <div class="cert-name">Power BI Workshop</div>
-        <div class="cert-issuer">Kota — Data Visualization</div>
+        <div class="cert-name">Database Management Essentials</div>
+        <div class="cert-issuer">Coursera</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🏆</div>
+      <div>
+        <div class="cert-name">National Data Science Olympiad</div>
+        <div class="cert-issuer">Pinnacle Excellence Conclave (2026)</div>
       </div>
     </div>
   </div>
@@ -474,7 +420,7 @@ footer { border-top: 1px solid var(--rule); padding: 2rem; text-align: center; }
   </div>
   <div class="contact-grid">
     <div>
-      <p class="contact-sub">I'm actively seeking Data Science & ML internship opportunities in Hyderabad, Bangalore, and Vijayawada. Open to project collaborations and learning opportunities.</p>
+      <p class="contact-sub">Actively seeking Data Science & ML internship opportunities in Hyderabad, Bangalore, and Vijayawada.</p>
     </div>
     <div class="contact-links">
       <a href="mailto:maheshrao5885@gmail.com" class="contact-link">
@@ -488,7 +434,7 @@ footer { border-top: 1px solid var(--rule); padding: 2rem; text-align: center; }
         <span class="contact-link-icon">💼</span>
         <div>
           <div class="contact-link-label">LinkedIn</div>
-          <div class="contact-link-val">kota-mahesh-rao</div>
+          <div class="contact-link-val">kota-mahesh-rao-ds</div>
         </div>
       </a>
       <a href="https://github.com/mahesh-kota" target="_blank" class="contact-link">
@@ -503,7 +449,7 @@ footer { border-top: 1px solid var(--rule); padding: 2rem; text-align: center; }
 </section>
 
 <footer>
-  <p class="footer-text">Kota Mahesh Rao &nbsp;·&nbsp; Data Science Portfolio &nbsp;·&nbsp; Amrita Sai Institute '27 &nbsp;·&nbsp; Hyderabad, India</p>
+  <p class="footer-text">Kota Mahesh Rao &nbsp;·&nbsp; Data Science Portfolio &nbsp;·&nbsp; Amrita Sai Institute '27</p>
 </footer>
 
 <script>
